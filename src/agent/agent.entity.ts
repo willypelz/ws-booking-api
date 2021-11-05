@@ -1,18 +1,17 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToOne, ManyToOne, OneToMany, JoinColumn, AfterUpdate, BeforeUpdate } from 'typeorm';
 import { UserEntity } from '../user/user.entity';
-import {AgentEntity} from "../agent/agent.entity";
 
 @Entity('booking')
-export class BookingEntity {
+export class AgentEntity {
 
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  startDate: Date;
+  name: string;
 
   @Column()
-  finishDate: Date;
+  email: string;
 
   @Column({ type: 'timestamp', default: () => "CURRENT_TIMESTAMP"})
   created: Date;
@@ -24,10 +23,4 @@ export class BookingEntity {
   updateTimestamp() {
     this.updated = new Date;
   }
-
-  @ManyToOne(type => UserEntity, user => user.id)
-  user: UserEntity;
-
-  @ManyToOne(type => AgentEntity, agent => agent.id)
-  agent: AgentEntity;
 }
