@@ -42,7 +42,7 @@ The branch `master` implements TypeORM with a mySQL database.
 
 ----------
 
-Create a new mysql database with the name `nestjsrealworld`\
+Create a new mysql database with the name `ws-booking-api`\
 (or the name you specified in the ormconfig.json)
 
 Copy TypeORM config example file for database settings
@@ -62,41 +62,9 @@ Set mysql database settings in ormconfig.json
       "synchronize": true
     }
     
-Start local mysql server and create new database 'nestjsrealworld'
+Start local mysql server and create new database 'ws-booking-api'
 
 On application start, tables for all entities will be created.
-
-----------
-
-##### Prisma
-
-----------
-
-To run the example with Prisma checkout branch `prisma`, remove the node_modules and run `npm install`
-
-Create a new mysql database with the name `nestjsrealworld-prisma` (or the name you specified in `prisma/.env`)
-
-Copy prisma config example file for database settings
-
-    cp prisma/.env.example prisma/.env
-
-Set mysql database settings in prisma/.env
-
-    DATABASE_URL="mysql://USER:PASSWORD@HOST:PORT/DATABASE"
-
-To create all tables in the new database make the database migration from the prisma schema defined in prisma/schema.prisma
-
-    npx prisma migrate save --experimental
-    npx prisma migrate up --experimental
-
-Now generate the prisma client from the migrated database with the following command
-
-    npx prisma generate
-
-The database tables are now set up and the prisma client is generated. For more information see the docs:
-
-- https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project-typescript-mysql
-
 
 ----------
 
@@ -109,20 +77,10 @@ The database tables are now set up and the prisma client is generated. For more 
 
 ----------
 
-## API Specification
-
-This application adheres to the api specifications set by the [Thinkster](https://github.com/gothinkster) team. This helps mix and match any backend with any other frontend without conflicts.
-
-> [Full API Spec](https://github.com/gothinkster/realworld/tree/master/api)
-
-More information regarding the project can be found here https://github.com/gothinkster/realworld
-
-----------
-
 ## Start application
 
 - `npm start`
-- Test api with `http://localhost:3000/api/articles` in your favourite browser
+- Test api with `http://localhost:3000/api/` in your favourite browser
 
 ----------
 
