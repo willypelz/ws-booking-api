@@ -19,7 +19,7 @@ export class BookingModule implements NestModule {
     consumer
       .apply(AuthMiddleware)
       .forRoutes(
-        {path: 'bookings/feed', method: RequestMethod.GET},
+        {path: 'bookings', method: RequestMethod.GET},
         {path: 'bookings', method: RequestMethod.POST},
         {path: 'bookings/:slug', method: RequestMethod.DELETE},
         {path: 'bookings/:slug', method: RequestMethod.PUT}
