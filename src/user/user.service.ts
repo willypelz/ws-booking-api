@@ -28,9 +28,6 @@ export class UserService {
       return null;
     }
 
-    if (await argon2.verify(user.password, password)) {
-      return user;
-    }
 
     return null;
   }
@@ -41,7 +38,7 @@ export class UserService {
     const {username, email, password} = dto;
     const qb = await getRepository(UserEntity)
       .createQueryBuilder('user')
-      .where('user.username = :username', { username })
+      .where('user.name = :name', { username })
       .orWhere('user.email = :email', { email });
 
     const user = await qb.getOne();
@@ -54,10 +51,9 @@ export class UserService {
 
     // create new user
     let newUser = new UserEntity();
-    newUser.username = username;
+    newUser.name = username;
     newUser.email = email;
-    newUser.password = password;
-    newUser.articles = [];
+    newUser.bookings = [];
 
     const errors = await validate(newUser);
     if (errors.length > 0) {
@@ -116,11 +112,8 @@ export class UserService {
   private buildUserRO(user: UserEntity) {
     const userRO = {
       id: user.id,
-      username: user.username,
-      email: user.email,
-      bio: user.bio,
-      token: this.generateJWT(user),
-      image: user.image
+      name: user.username,
+      email: user.email
     };
 
     return {user: userRO};
