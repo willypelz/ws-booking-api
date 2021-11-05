@@ -31,9 +31,9 @@ export class AgentController {
   //   return await this.agentService.findOne({slug});
   // }
   //
-  // // @Get(':slug/comments')
-  // // async findComments(@Param('slug') slug): Promise<CommentsRO> {
-  // //   return await this.agentService.findComments(slug);
+  // // @Get(':slug/agents')
+  // // async findAgents(@Param('slug') slug): Promise<AgentsRO> {
+  // //   return await this.agentService.findAgents(slug);
   // // }
   //
   @ApiOperation({ summary: 'Create agent' })
@@ -61,37 +61,22 @@ export class AgentController {
   //   return this.agentService.delete(params.slug);
   // }
   // //
-  // // @ApiOperation({ summary: 'Create comment' })
-  // // @ApiResponse({ status: 201, description: 'The comment has been successfully created.'})
+  // // @ApiOperation({ summary: 'Create agent' })
+  // // @ApiResponse({ status: 201, description: 'The agent has been successfully created.'})
   // // @ApiResponse({ status: 403, description: 'Forbidden.' })
-  // // @Post(':slug/comments')
-  // // async createComment(@Param('slug') slug, @Body('comment') commentData: CreateCommentDto) {
-  // //   return await this.agentService.addComment(slug, commentData);
+  // // @Post(':slug/agents')
+  // // async createAgent(@Param('slug') slug, @Body('agent') agentData: CreateAgentDto) {
+  // //   return await this.agentService.addAgent(slug, agentData);
   // // }
   //
-  // @ApiOperation({ summary: 'Delete comment' })
+  // @ApiOperation({ summary: 'Delete agent' })
   // @ApiResponse({ status: 201, description: 'The agent has been successfully deleted.'})
   // @ApiResponse({ status: 403, description: 'Forbidden.' })
-  // @Delete(':slug/comments/:id')
-  // async deleteComment(@Param() params) {
+  // @Delete(':slug/agents/:id')
+  // async deleteAgent(@Param() params) {
   //   const {slug, id} = params;
-  //   return await this.agentService.deleteComment(slug, id);
+  //   return await this.agentService.deleteAgent(slug, id);
   // }
-  //
-  // @ApiOperation({ summary: 'Favorite agent' })
-  // @ApiResponse({ status: 201, description: 'The agent has been successfully favorited.'})
-  // @ApiResponse({ status: 403, description: 'Forbidden.' })
-  // @Post(':slug/favorite')
-  // async favorite(@User('id') userId: number, @Param('slug') slug) {
-  //   return await this.agentService.favorite(userId, slug);
-  // }
-  //
-  // @ApiOperation({ summary: 'Unfavorite agent' })
-  // @ApiResponse({ status: 201, description: 'The agent has been successfully unfavorited.'})
-  // @ApiResponse({ status: 403, description: 'Forbidden.' })
-  // @Delete(':slug/favorite')
-  // async unFavorite(@User('id') userId: number, @Param('slug') slug) {
-  //   return await this.agentService.unFavorite(userId, slug);
-  // }
+
 
 }

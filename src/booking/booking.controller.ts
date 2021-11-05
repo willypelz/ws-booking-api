@@ -31,9 +31,9 @@ export class BookingController {
   //   return await this.bookingService.findOne({slug});
   // }
   //
-  // // @Get(':slug/comments')
-  // // async findComments(@Param('slug') slug): Promise<CommentsRO> {
-  // //   return await this.bookingService.findComments(slug);
+  // // @Get(':slug/bookings')
+  // // async findBookings(@Param('slug') slug): Promise<BookingsRO> {
+  // //   return await this.bookingService.findBookings(slug);
   // // }
   //
   @ApiOperation({ summary: 'Create booking' })
@@ -61,37 +61,22 @@ export class BookingController {
   //   return this.bookingService.delete(params.slug);
   // }
   // //
-  // // @ApiOperation({ summary: 'Create comment' })
-  // // @ApiResponse({ status: 201, description: 'The comment has been successfully created.'})
+  // // @ApiOperation({ summary: 'Create booking' })
+  // // @ApiResponse({ status: 201, description: 'The booking has been successfully created.'})
   // // @ApiResponse({ status: 403, description: 'Forbidden.' })
-  // // @Post(':slug/comments')
-  // // async createComment(@Param('slug') slug, @Body('comment') commentData: CreateCommentDto) {
-  // //   return await this.bookingService.addComment(slug, commentData);
+  // // @Post(':slug/bookings')
+  // // async createBooking(@Param('slug') slug, @Body('booking') bookingData: CreateBookingDto) {
+  // //   return await this.bookingService.addBooking(slug, bookingData);
   // // }
   //
-  // @ApiOperation({ summary: 'Delete comment' })
+  // @ApiOperation({ summary: 'Delete booking' })
   // @ApiResponse({ status: 201, description: 'The booking has been successfully deleted.'})
   // @ApiResponse({ status: 403, description: 'Forbidden.' })
-  // @Delete(':slug/comments/:id')
-  // async deleteComment(@Param() params) {
+  // @Delete(':slug/bookings/:id')
+  // async deleteBooking(@Param() params) {
   //   const {slug, id} = params;
-  //   return await this.bookingService.deleteComment(slug, id);
+  //   return await this.bookingService.deleteBooking(slug, id);
   // }
   //
-  // @ApiOperation({ summary: 'Favorite booking' })
-  // @ApiResponse({ status: 201, description: 'The booking has been successfully favorited.'})
-  // @ApiResponse({ status: 403, description: 'Forbidden.' })
-  // @Post(':slug/favorite')
-  // async favorite(@User('id') userId: number, @Param('slug') slug) {
-  //   return await this.bookingService.favorite(userId, slug);
-  // }
-  //
-  // @ApiOperation({ summary: 'Unfavorite booking' })
-  // @ApiResponse({ status: 201, description: 'The booking has been successfully unfavorited.'})
-  // @ApiResponse({ status: 403, description: 'Forbidden.' })
-  // @Delete(':slug/favorite')
-  // async unFavorite(@User('id') userId: number, @Param('slug') slug) {
-  //   return await this.bookingService.unFavorite(userId, slug);
-  // }
 
 }

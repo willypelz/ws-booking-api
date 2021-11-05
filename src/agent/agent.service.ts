@@ -52,28 +52,28 @@ export class AgentService {
   }
 
   //
-  // async addComment(slug: string, commentData): Promise<ArticleRO> {
+  // async addAgent(slug: string, agentData): Promise<ArticleRO> {
   //   let agent = await this.agentRepository.findOne({slug});
   //
-  //   const comment = new Comment();
-  //   comment.body = commentData.body;
+  //   const agent = new Agent();
+  //   agent.body = agentData.body;
   //
-  //   agent.comments.push(comment);
+  //   agent.agents.push(agent);
   //
-  //   await this.commentRepository.save(comment);
+  //   await this.agentRepository.save(agent);
   //   agent = await this.agentRepository.save(agent);
   //   return {agent}
   // }
   //
-  // async deleteComment(slug: string, id: string): Promise<ArticleRO> {
+  // async deleteAgent(slug: string, id: string): Promise<ArticleRO> {
   //   let agent = await this.agentRepository.findOne({slug});
   //
-  //   const comment = await this.commentRepository.findOne(id);
-  //   const deleteIndex = agent.comments.findIndex(_comment => _comment.id === comment.id);
+  //   const agent = await this.agentRepository.findOne(id);
+  //   const deleteIndex = agent.agents.findIndex(_agent => _agent.id === agent.id);
   //
   //   if (deleteIndex >= 0) {
-  //     const deleteComments = agent.comments.splice(deleteIndex, 1);
-  //     await this.commentRepository.delete(deleteComments[0].id);
+  //     const deleteAgents = agent.agents.splice(deleteIndex, 1);
+  //     await this.agentRepository.delete(deleteAgents[0].id);
   //     agent =  await this.agentRepository.save(agent);
   //     return {agent};
   //   } else {
@@ -116,16 +116,16 @@ export class AgentService {
   //   return {agent};
   // }
   //
-  // async findComments(slug: string): Promise<CommentsRO> {
+  // async findAgents(slug: string): Promise<AgentsRO> {
   //   const agent = await this.agentRepository.findOne({slug});
-  //   return {comments: agent.comments};
+  //   return {agents: agent.agents};
   // }
   //
   async create(userId: number, agentData: CreateAgentDto): Promise<AgentEntity> {
 
     let agent = new AgentEntity();
-    agent.startDate = agentData.startDate;
-    agent.finishDate = agentData.finishDate;
+    agent.email = agentData.email;
+    agent.name = agentData.name;
 
     return await this.agentRepository.save(agent);
   }

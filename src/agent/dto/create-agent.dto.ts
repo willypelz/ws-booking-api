@@ -1,4 +1,4 @@
 export class CreateAgentDto {
-  readonly startDate: Date;
-  readonly finishDate: Date;
+  readonly name: string;
+  readonly email: string;
 }

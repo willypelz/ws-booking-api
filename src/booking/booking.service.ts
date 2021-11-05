@@ -3,7 +3,6 @@ import {InjectRepository} from '@nestjs/typeorm';
 import {Repository, getRepository, DeleteResult} from 'typeorm';
 import {BookingEntity} from './booking.entity';
 import {UserEntity} from '../user/user.entity';
-import {FollowsEntity} from '../profile/follows.entity';
 import {CreateBookingDto} from './dto';
 
 import {BookingRO, BookingsRO} from './booking.interface';
@@ -53,28 +52,28 @@ export class BookingService {
   }
 
   //
-  // async addComment(slug: string, commentData): Promise<ArticleRO> {
+  // async addBooking(slug: string, bookingData): Promise<ArticleRO> {
   //   let booking = await this.bookingRepository.findOne({slug});
   //
-  //   const comment = new Comment();
-  //   comment.body = commentData.body;
+  //   const booking = new Booking();
+  //   booking.body = bookingData.body;
   //
-  //   booking.comments.push(comment);
+  //   booking.bookings.push(booking);
   //
-  //   await this.commentRepository.save(comment);
+  //   await this.bookingRepository.save(booking);
   //   booking = await this.bookingRepository.save(booking);
   //   return {booking}
   // }
   //
-  // async deleteComment(slug: string, id: string): Promise<ArticleRO> {
+  // async deleteBooking(slug: string, id: string): Promise<ArticleRO> {
   //   let booking = await this.bookingRepository.findOne({slug});
   //
-  //   const comment = await this.commentRepository.findOne(id);
-  //   const deleteIndex = booking.comments.findIndex(_comment => _comment.id === comment.id);
+  //   const booking = await this.bookingRepository.findOne(id);
+  //   const deleteIndex = booking.bookings.findIndex(_booking => _booking.id === booking.id);
   //
   //   if (deleteIndex >= 0) {
-  //     const deleteComments = booking.comments.splice(deleteIndex, 1);
-  //     await this.commentRepository.delete(deleteComments[0].id);
+  //     const deleteBookings = booking.bookings.splice(deleteIndex, 1);
+  //     await this.bookingRepository.delete(deleteBookings[0].id);
   //     booking =  await this.bookingRepository.save(booking);
   //     return {booking};
   //   } else {
@@ -117,9 +116,9 @@ export class BookingService {
   //   return {booking};
   // }
   //
-  // async findComments(slug: string): Promise<CommentsRO> {
+  // async findBookings(slug: string): Promise<BookingsRO> {
   //   const booking = await this.bookingRepository.findOne({slug});
-  //   return {comments: booking.comments};
+  //   return {bookings: booking.bookings};
   // }
   //
   async create(userId: number, bookingData: CreateBookingDto): Promise<BookingEntity> {

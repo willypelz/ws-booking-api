@@ -2,6 +2,7 @@ import {Entity, PrimaryGeneratedColumn, Column, BeforeInsert, JoinTable, ManyToM
 import { IsEmail } from 'class-validator';
 import * as argon2 from 'argon2';
 import { ArticleEntity } from '../article/article.entity';
+import {BookingEntity} from "../booking/booking.entity";
 
 @Entity('user')
 export class UserEntity {
@@ -30,10 +31,8 @@ export class UserEntity {
     this.password = await argon2.hash(this.password);
   }
 
-  @ManyToMany(type => ArticleEntity)
+  @OneToMany(type => BookingEntity)
   @JoinTable()
-  favorites: ArticleEntity[];
+  bookings: BookingEntity[];
 
-  @OneToMany(type => ArticleEntity, article => article.author)
-  articles: ArticleEntity[];
 }
