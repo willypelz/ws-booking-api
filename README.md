@@ -28,9 +28,8 @@ Copy config file and set JsonWebToken secret key
 
 ## Database
 
-The codebase contains examples of two different database abstractions, namely [TypeORM](http://typeorm.io/) and [Prisma](https://www.prisma.io/). 
+The codebase contains examples of two different database abstractions, namely [TypeORM](http://typeorm.io/) . 
     
-The branch `master` implements TypeORM with a mySQL database.
 
 ----------
 
@@ -38,7 +37,7 @@ The branch `master` implements TypeORM with a mySQL database.
 
 ----------
 
-Create a new mysql database with the name `ws-booking-api`\
+Create a new mysql database with the name `ws-booking-db`\
 (or the name you specified in the ormconfig.json)
 
 Copy TypeORM config example file for database settings
@@ -53,12 +52,12 @@ Set mysql database settings in ormconfig.json
       "port": 3306,
       "username": "your-mysql-username",
       "password": "your-mysql-password",
-      "database": "nestjsrealworld",
+      "database": "ws-booking-db",
       "entities": ["src/**/**.entity{.ts,.js}"],
       "synchronize": true
     }
     
-Start local mysql server and create new database 'ws-booking-api'
+Start local mysql server and create new database 'ws-ws-booking-db'
 
 On application start, tables for all entities will be created.
 
