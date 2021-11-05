@@ -1,17 +1,13 @@
 import {Test} from '@nestjs/testing';
-import {PlatformClientService} from 'src/platformClient/services';
 import {BookingModule} from '../../../booking/booking.module';
 import * as request from 'supertest';
-import {configModules} from 'src/test/helpers';
 
 const mockApp = async (mockedPlatformService = {request: () => ({})}) =>
   await Test.createTestingModule({
     imports: [
       BookingModule,
-      ...configModules(),
     ],
   })
-    .overrideProvider(PlatformClientService).useFactory({factory: () => (mockedPlatformService)})
     .compile();
 
 const initializeApp = async (mockedPlatformService?: { request: (args?) => Record<string, any> }) => {
