@@ -13,12 +13,12 @@
 
 Clone the repository
 
-    git clone https://github.com/lujakob/nestjs-realworld-example-app.git
+    git clone https://github.com/willypelz/ws-booking-api.git'
 
 
 Switch to the repo folder
 
-    cd nestjs-realworld-example-app
+    cd ws-booking-api.git
     
 Install dependencies
     
