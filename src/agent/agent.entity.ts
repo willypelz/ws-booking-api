@@ -2,11 +2,7 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  OneToOne,
-  ManyToOne,
   OneToMany,
-  JoinColumn,
-  AfterUpdate,
   BeforeUpdate,
   JoinTable
 } from 'typeorm';
@@ -36,8 +32,11 @@ export class AgentEntity {
     this.updated = new Date;
   }
 
-  @OneToMany(type => BookingEntity, booking => booking.id)
+  @OneToMany(BookingEntity => BookingEntity, booking => booking.id)
   @JoinTable()
   booking: BookingEntity[];
 
+  @OneToMany(UserEntity => UserEntity, user => user.id)
+  @JoinTable()
+  user: UserEntity[];
 }

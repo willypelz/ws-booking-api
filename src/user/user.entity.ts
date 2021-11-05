@@ -3,6 +3,7 @@ import { IsEmail } from 'class-validator';
 import * as argon2 from 'argon2';
 import { ArticleEntity } from '../article/article.entity';
 import {BookingEntity} from "../booking/booking.entity";
+import {AgentEntity} from "../agent/agent.entity";
 
 @Entity('user')
 export class UserEntity {
@@ -31,8 +32,11 @@ export class UserEntity {
     this.password = await argon2.hash(this.password);
   }
 
-  @OneToMany(type => BookingEntity)
+  @OneToMany(type => BookingEntity, booking => booking.id)
   @JoinTable()
   bookings: BookingEntity[];
 
+  @OneToMany(type => AgentEntity, agent => agent.id)
+  @JoinTable()
+  agent: BookingEntity[];
 }
