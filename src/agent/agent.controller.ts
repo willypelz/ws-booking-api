@@ -33,7 +33,7 @@ export class AgentController {
 
   @Get(':slug/agents')
   async findAgents(@Param('slug') slug): Promise<AgentsRO> {
-    // return await this.agentService.findAgents(slug);
+    return await this.agentService.findAgents(slug);
   }
   //
   @ApiOperation({ summary: 'Create agent' })
