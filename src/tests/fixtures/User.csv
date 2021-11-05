@@ -1,4 +1,4 @@
-id,email,createdAt,updatedAt,password,avatarImageIdentifier
-6af494db-5b2f-436c-bd37-fe233ed47a25,hello@gmail.xom,2021-08-17 17:20:04.900104,2021-08-17 17:20:04.900104,password1,
-81c35582-9bba-48d8-8292-5694c80ef2fe,huzaifaali16@gmail.com,2021-08-17 18:21:14.921,2021-08-17 18:21:15.039163,password2,
-06a1c7ac-41e6-4a4f-a16b-46c185c51c9d,testide1234@gmail.com,2021-08-19 16:46:37.394,2021-08-25 06:33:04.578255,password3,0bdcdaad-44f2-48f5-863e-b2a3ac82b46e
+id,email,createdAt,updatedAt,name
+6af494db-5b2f-436c-bd37-fe233ed47a25,hello@gmail.xom,2021-08-17 17:20:04.900104, michael,
+81c35582-9bba-48d8-8292-5694c80ef2fe,huzaifaali16@gmail.com,2021-08-17 18:21:14.921, David,
+06a1c7ac-41e6-4a4f-a16b-46c185c51c9d,testide1234@gmail.com,2021-08-19 16:46:37.394, Willimas,
