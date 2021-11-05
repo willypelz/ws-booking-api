@@ -75,7 +75,7 @@ export class AgentService {
   }
 
   async delete(slug: string): Promise<DeleteResult> {
-    // return await this.agentRepository.delete({ slug: slug});
+    return await this.agentRepository.delete({ slug: slug});
   }
 
 }
