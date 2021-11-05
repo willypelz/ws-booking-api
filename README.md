@@ -13,7 +13,7 @@
 
 Clone the repository
 
-    git clone https://github.com/willypelz/ws-booking-api.git'
+    git clone https://github.com/willypelz/ws-booking-api.git
 
 
 Switch to the repo folder
@@ -35,8 +35,6 @@ Copy config file and set JsonWebToken secret key
 The codebase contains examples of two different database abstractions, namely [TypeORM](http://typeorm.io/) and [Prisma](https://www.prisma.io/). 
     
 The branch `master` implements TypeORM with a mySQL database.
-
-The branch `prisma` implements Prisma with a mySQL database.
 
 ----------
 
