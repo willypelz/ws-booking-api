@@ -19,12 +19,10 @@ export class AgentModule implements NestModule {
     consumer
       .apply(AuthMiddleware)
       .forRoutes(
-        {path: 'agents/feed', method: RequestMethod.GET},
+        {path: 'agents', method: RequestMethod.GET},
         {path: 'agents', method: RequestMethod.POST},
         {path: 'agents/:slug', method: RequestMethod.DELETE},
-        {path: 'agents/:slug', method: RequestMethod.PUT},
-        {path: 'agents/:slug/booking', method: RequestMethod.POST},
-        {path: 'agents/:slug/booking/:id', method: RequestMethod.DELETE}
+        {path: 'agents/:slug', method: RequestMethod.PUT}
       )
   }
 }
