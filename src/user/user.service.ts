@@ -112,7 +112,7 @@ export class UserService {
   private buildUserRO(user: UserEntity) {
     const userRO = {
       id: user.id,
-      name: user.username,
+      name: user.name,
       email: user.email
     };
 
